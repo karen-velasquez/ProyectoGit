@@ -2,6 +2,8 @@ package com.karen_velasquez.www.ProyectoGit;
 
 import java.util.List;
 
+import javax.el.MethodNotFoundException;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,9 +39,10 @@ class MinibusControlador {
   Minibus one(@PathVariable Long id) {
 
     return repository.findById(id)
-      .orElseThrow(() -> new MinibusNotFoundException(id));
+      .orElseThrow(() -> new MethodNotFoundException());
+    //me salia error al devolver el Minibus Not Found Exception tuve que camiarlo
   }
-
+  
   @PutMapping("/minibuses/{id}")
   Minibus replaceMinibus(@RequestBody Minibus newMinibus, @PathVariable Long id) {
 
