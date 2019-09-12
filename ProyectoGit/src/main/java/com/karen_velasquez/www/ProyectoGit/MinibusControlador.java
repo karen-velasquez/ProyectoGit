@@ -39,7 +39,7 @@ class MinibusControlador {
   Minibus one(@PathVariable Long id) {
 
     return repository.findById(id)
-      .orElseThrow(() -> new MethodNotFoundException());
+      .orElseThrow(() -> new MinibusNotFoundException(id));
     //me salia error al devolver el Minibus Not Found Exception tuve que camiarlo
   }
   
