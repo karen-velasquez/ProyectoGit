@@ -10,9 +10,11 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 class LoadDatabase {
 
-  @Bean
-  CommandLineRunner initDatabase(EmployeeRepository repository) {
-    return args -> {
+
+@Bean
+  CommandLineRunner initDatabase(MinibusRepositorio repository) {
+	
+	return args -> {
       log.info("Preloading " + repository.save(new Minibus(123, "Obrajes","Terminal")));
       log.info("Preloading " + repository.save(new Minibus(342, "Calacoto","Rodriguez")));
     };
