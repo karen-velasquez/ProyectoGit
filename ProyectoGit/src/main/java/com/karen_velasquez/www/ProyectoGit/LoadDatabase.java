@@ -15,8 +15,8 @@ class LoadDatabase {
   CommandLineRunner initDatabase(MinibusRepositorio repository) {
 	
 	return args -> {
-      log.info("Preloading " + repository.save(new Minibus(123, "Obrajes","Terminal")));
-      log.info("Preloading " + repository.save(new Minibus(342, "Calacoto","Rodriguez")));
+      log.info("Preloading " + repository.save(new Minibus(123, "Obrajes")));
+      log.info("Preloading " + repository.save(new Minibus(342, "Calacoto")));
     };
   }
 }

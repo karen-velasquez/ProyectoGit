@@ -12,13 +12,11 @@ import javax.persistence.Id;
 		private @Id @GeneratedValue Long id;
 		private int numero;
 		private String p_partida;
-		private String p_llegada;
 		 
 		Minibus(){}
-			Minibus(int numero, String p_partida,String p_llegada){
+			Minibus(int numero, String p_partida){
 				this.numero=numero;
 				this.p_partida=p_partida;
-				this.p_llegada=p_llegada;
 		}
 
 }
